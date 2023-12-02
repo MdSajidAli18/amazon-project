@@ -68,7 +68,7 @@ document.querySelector('.js-products-grid').innerHTML = productsHTML;
 document.querySelectorAll('.js-add-to-cart')
 .forEach((button) => {
   button.addEventListener('click', () => {
-    const productName = button.dataset.productId; //which product we want to add.
+    const productId = button.dataset.productId; //which product we want to add.
 
     let matchingItem;
     cart.forEach((item) => {
@@ -84,5 +84,14 @@ document.querySelectorAll('.js-add-to-cart')
         quantity: 1
     });
   }
+
+  //code is to calculate the cart quantity// 
+  let cartQuantity = 0;
+  cart.forEach((item) => {
+    cartQuantity += item.quantity;
+  });
+
+  //code is to make cart section interactive, so if we add the product ,the cart section will be updated.
+  document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
   });
 });
