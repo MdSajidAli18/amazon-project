@@ -1,29 +1,6 @@
-//step1:- Saving the data//
-const products = [{  //created an object{} inside an array[].
-    image: 'images/products/athletic-cotton-socks-6-pairs.jpg',
-    name: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
-    rating: {
-        stars: 4.5,
-        count: 87
-    },
-    priceCents: 1090 // in cents($10.90 = 1090)
-},{
-    image: 'images/products/intermediate-composite-basketball.jpg',
-    name: ' Intermediate Size Basketball',
-    rating: {
-        stars: 4,
-        count: 127
-    },
-    priceCents: 2095
-},{
-    image: 'images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg',
-    name: 'Adults Plain Cotton T-Shirt - 2 Pack',
-    rating: {
-        stars: 4.5,
-        count: 56
-    },
-    priceCents: 799
-}];
+//step1:- Saving the datas (datas means the products we want on our amazon interface//
+//Datas are saved in a folder with name 'data' and inside the 'data' folder we have datas for products with name 'products.js' which we wanted to save .
+//And this folder is linked in our html code by javascript file at the bottom.
 
 // step3:-Let's create a variable for combining all the 'html strings(created by step2)' together//
 let productsHTML = ''; //And now that we combined all the html into this variable(productsHTML) in the line34 of this page.
