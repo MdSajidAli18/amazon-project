@@ -53,14 +53,36 @@ products.forEach((product) => {
       Added
     </div>
 
-    <button class="add-to-cart-button button-primary">
+    <button class="add-to-cart-button button-primary  js-add-to-cart"
+    data-product-id="${product.id}">
       Add to Cart
     </button>
   </div>
    `;
 });
 
-console.log(productsHTML);
 
-//Now the LAST STEP is to take this html and put it on the web page(by using DOM)//
+//Now the LAST STEP is to take this html and put it on the web page(by using DOM) to make it interactive.//
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
+
+document.querySelectorAll('.js-add-to-cart')
+.forEach((button) => {
+  button.addEventListener('click', () => {
+    const productName = button.dataset.productId; //which product we want to add.
+
+    let matchingItem;
+    cart.forEach((item) => {
+      if(productId === item.productId){ //this is to check whether the product is in our cart or not which we are wanting to add. 
+        matchingItem = item;
+      }
+    });
+    if(matchingItem){ //If the product we wanting to add in the cart is already in the cart then it will increase the quantity by 1.
+      matchingItem.quantity += 1;
+    } else{
+      cart.push({                //It will add the new product which we are adding first time in the cart with the 'product name' and 'no. of quantity = 1'after clicking the 'Add to Cart' button.
+        productId: productId,
+        quantity: 1
+    });
+  }
+  });
+});
